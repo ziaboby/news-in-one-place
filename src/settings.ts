@@ -1,5 +1,9 @@
-export const languages = ['it', 'en'];
-export const translations = {
+export const LANGUAGES = ['it', 'en'];
+export const TRANSLATIONS: { [key: string]: { it: string; en: string } } = {
+    logoLabel: {
+        it: 'News',
+        en: 'News'
+    },
     title: {
         it: 'Le notizie in un solo posto',
         en: 'News in one place'
