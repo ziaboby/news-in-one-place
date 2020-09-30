@@ -1,4 +1,5 @@
-function test(a: number, b: number): number {
-    return a + b;
-}
-test(5, 4);
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './layout/App';
+
+ReactDOM.render(<App />, document.getElementById('app'));

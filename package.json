@@ -1,6 +1,6 @@
 {
   "name": "news-in-one-place",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Web app to collect news in one single place",
   "license": "SEE LICENSE IN LICENSE.md",
   "private": true,

@@ -1,5 +1,16 @@
-export const LANGUAGES = ['it', 'en'];
-export const TRANSLATIONS: { [key: string]: { it: string; en: string } } = {
+export const LANGUAGES: string[] = ['it', 'en'];
+export const THEMES = {
+    light: {
+        palette: {}
+    },
+    dark: {}
+};
+export const ROUTES = {
+    index: '/',
+    edit: '/edit',
+    preview: '/view/:sourcesIds'
+};
+export const TRANSLATIONS: { [key: string]: { [key: string]: string } } = {
     logoLabel: {
         it: 'News',
         en: 'News'
