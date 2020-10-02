@@ -1,18 +1,20 @@
 {
   "name": "news-in-one-place",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Web app to collect news in one single place",
   "license": "SEE LICENSE IN LICENSE.md",
   "private": true,
   "scripts": {
-    "start:dev": "webpack-dev-server -d --devtool inline-source-map --watch",
-    "start:prod": "webpack-dev-server -p --watch",
-    "build": "webpack -p"
+    "build:dev:watch": "webpack-dev-server -d --devtool inline-source-map --watch",
+    "build:prod:watch": "webpack -p --watch",
+    "build:prod": "webpack -p",
+    "start:dev": "webpack-dev-server" 
   },
   "dependencies": {
     "@babel/runtime": "7.11.2",
     "@material-ui/core": "4.11.0",
     "@material-ui/icons": "4.9.1",
+    "axios": "0.20.0",
     "babel-loader": "8.1.0",
     "react": "16.13.1",
     "react-dom": "16.13.1",

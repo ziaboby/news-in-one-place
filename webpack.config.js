@@ -41,6 +41,7 @@ module.exports = (env, argv) => {
             //warnings: true
         },
         devServer: {
+            contentBase: path.join(__dirname, 'public'),
             historyApiFallback: true
         }
     };
