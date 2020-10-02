@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
+import { HashRouter, Route, Switch, Redirect } from 'react-router-dom';
 import Grid from '@material-ui/core/Grid';
 import { LanguageContextProvider } from './context/LanguageContext';
 import { ThemeContextProvider } from './context/ThemeContext';
@@ -9,7 +9,7 @@ import PageEdit from './pages/Edit';
 import { ROUTES } from '../constants/settings';
 
 const App: React.FC = () => (
-    <BrowserRouter>
+    <HashRouter>
         <LanguageContextProvider>
             <ThemeContextProvider>
                 <Grid container spacing={5}>
@@ -25,7 +25,7 @@ const App: React.FC = () => (
                 </Grid>
             </ThemeContextProvider>
         </LanguageContextProvider>
-    </BrowserRouter>
+    </HashRouter>
 );
 
 export default App;
