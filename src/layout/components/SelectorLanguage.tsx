@@ -2,7 +2,7 @@ import React, { useCallback, useContext } from 'react';
 import Tooltip from '@material-ui/core/Tooltip';
 import Switch from '@material-ui/core/Switch';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
-import { LANGUAGES } from '../../settings';
+import { LANGUAGES } from '../../constants/settings';
 import { LanguageContext } from '../context/LanguageContext';
 import Translation from '../../utils/Translation';
 

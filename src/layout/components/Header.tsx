@@ -8,7 +8,7 @@ import SelectorTheme from './SelectorTheme';
 import SelectorLanguage from './SelectorLanguage';
 import NavigatorLink from './NavigatorLink';
 import Translation from '../../utils/Translation';
-import { ROUTES } from '../../settings';
+import { ROUTES } from '../../constants/settings';
 
 const Header: React.FC = () => (
     <AppBar position='static'>

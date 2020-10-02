@@ -4,7 +4,7 @@ import { withRouter, RouteComponentProps } from 'react-router';
 import VisibilityIcon from '@material-ui/icons/Visibility';
 import EditIcon from '@material-ui/icons/Edit';
 import Tooltip from '@material-ui/core/Tooltip';
-import { ROUTES } from '../../settings';
+import { ROUTES } from '../../constants/settings';
 import Translation from '../../utils/Translation';
 import SourcesReducer, { initialState } from '../../reducers/sources';
 
@@ -17,6 +17,7 @@ const NavigatorLink: React.FC<RouteComponentProps> = ({ location }) => {
         link = isPreviewPage
             ? ROUTES.edit
             : ROUTES.preview.substring(0, ROUTES.preview.lastIndexOf('/')); // TODO add sourceids
+
     return (
         <Link to={link} style={enablePreviewLink ? {} : { pointerEvents: 'none' }}>
             <Tooltip title={text} aria-label={label}>

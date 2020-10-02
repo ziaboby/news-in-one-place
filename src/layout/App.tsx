@@ -6,7 +6,7 @@ import { ThemeContextProvider } from './context/ThemeContext';
 import Header from './components/Header';
 import PagePreview from './pages/Preview';
 import PageEdit from './pages/Edit';
-import { ROUTES } from '../settings';
+import { ROUTES } from '../constants/settings';
 
 const App: React.FC = () => (
     <BrowserRouter>

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { LANGUAGES } from '../../settings';
+import { LANGUAGES } from '../../constants/settings';
 
 const userBrowserLanguage = (window.navigator.language || '').substring(0, 2),
     settings = {
