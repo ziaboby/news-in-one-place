@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { LanguageContext } from '../layout/context/LanguageContext';
-import { TRANSLATIONS } from '../settings';
+import { TRANSLATIONS } from '../constants/settings';
 
 type Props = {
     property: string;
