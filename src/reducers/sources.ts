@@ -1,23 +1,30 @@
-import { Actions, ActionType, NewsApiArticleType } from '.';
-
-type DataType = { [sourceId: string]: string };
-type StateType = {
-    data: DataType;
-    selectedSources: string[];
-};
+import {
+    ADD_SOURCES,
+    SELECT_SOURCE,
+    UNSELECT_SOURCE,
+    CLEAR_SOURCES,
+    CLEAR_SELECTED_SOURCES
+} from '../constants/actions';
+import { ActionType, DataType, NewsApiArticleType, SourcesReducerType } from '../typing';
 
 export const initialState = {
     data: {},
     selectedSources: []
 };
 
-function SourcesReducer(state: StateType, action: ActionType): StateType {
+function SourcesReducer(
+    state: SourcesReducerType = initialState,
+    action: ActionType
+): SourcesReducerType {
     switch (action.type) {
-        case '' + Actions.ADD_SOURCES: {
+        case ADD_SOURCES: {
             const sources: DataType = {};
             action.payload.forEach((article: NewsApiArticleType) => {
                 const name = article.source.name;
-                if (!state.data[name] && sources[name]) {
+                if (
+                    !state.data[name] &&
+                    !sources[name] /* && article.url.indexOf('amp') === -1 */
+                ) {
                     sources[name] = (article.url.match(/\/\/(www.|)([\w.]+)\//) || [])[2];
                 }
             });
@@ -29,7 +36,7 @@ function SourcesReducer(state: StateType, action: ActionType): StateType {
                 }
             };
         }
-        case '' + Actions.SELECT_SOURCE: {
+        case SELECT_SOURCE: {
             if (!state.selectedSources.includes(action.payload)) {
                 return {
                     ...state,
@@ -38,7 +45,7 @@ function SourcesReducer(state: StateType, action: ActionType): StateType {
             }
             return state;
         }
-        case '' + Actions.UNSELECT_SOURCE: {
+        case UNSELECT_SOURCE: {
             if (state.selectedSources.includes(action.payload)) {
                 return {
                     ...state,
@@ -49,13 +56,13 @@ function SourcesReducer(state: StateType, action: ActionType): StateType {
             }
             return state;
         }
-        case '' + Actions.CLEAR_SOURCES: {
+        case CLEAR_SOURCES: {
             return {
                 ...state,
                 data: initialState.data
             };
         }
-        case '' + Actions.CLEAR_SELECTED_SOURCES: {
+        case CLEAR_SELECTED_SOURCES: {
             return {
                 ...state,
                 selectedSources: initialState.selectedSources
