@@ -10,10 +10,6 @@ export const ROUTES = {
     edit: '/edit',
     preview: '/view/:sourcesIds'
 };
-API_KEY = '';
-export const ENDPOINTS = {
-    getAvailableSources: 'http://newsapi.org/v2/top-headlines?country=%COUNTRY%&apiKey=' + API_KEY
-};
 export const TRANSLATIONS: { [key: string]: { [key: string]: string } } = {
     logoLabel: {
         it: 'News',

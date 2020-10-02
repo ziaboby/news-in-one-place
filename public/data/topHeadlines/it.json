@@ -1,0 +1,58 @@
+{
+    "status": "ok",
+    "totalResults": 34,
+    "articles": [
+        {
+            "source": {
+                "id": null,
+                "name": "Ilmessaggero.it"
+            },
+            "author": "Redazione Web",
+            "title": "Covid Italia, Iss: Rt sopra 1 in 11 regioni, rischio di rapido peggioramento - Il Messaggero",
+            "description": "Il Covid circola in tutto il Paese e si conferma un aumento nei nuovi casi segnalati in Italia per la nona settimana consecutiva. L'indice Rt è sopra 1 in 11 regioni e 2 province autonome....",
+            "url": "https://www.ilmessaggero.it/salute/focus/covid_italia_rapporto_iss_ultime_notizie_nuovi_casi_indice_rt_eta_media-5499468.html",
+            "urlToImage": "https://www.ilmessaggero.it/photos/MED/94/68/5499468_1931_covid_italia_indice_rt_regioni_ultime_notizie.jpg",
+            "publishedAt": "2020-10-02T17:26:15Z",
+            "content": "Il Covid circola in tutto il Paese e si conferma un aumento nei nuovi casi segnalati in Italia per la nona settimana consecutiva. L'indice Rt è sopra 1 in 11 regioni e 2 province autonome. C'è un «co… [+5139 chars]"
+        },
+        {
+            "source": {
+                "id": "ansa",
+                "name": "ANSA.it"
+            },
+            "author": "",
+            "title": "Immuni, Conte 'obbligo morale scaricarla', l'ANSA aderisce alla Campagna - Agenzia ANSA",
+            "description": "Fieg in campo. Speranza-Martella, grazie a giornali per sostegno. L'ANSA aderisce alla campagna\r\ndella presidenza del Consiglio e del Ministero della Salute (ANSA)",
+            "url": "https://www.ansa.it/sito/notizie/politica/2020/10/02/immuni-conte-obbligo-morale-scaricarla-lansa-aderisce-alla-campagna_ea6cf9fd-3695-41b6-83d1-d59f18d42864.html",
+            "urlToImage": "https://www.ansa.it/webimages/img_700/2020/10/1/1c0efc519142a46eaf4b014b55767596.jpg",
+            "publishedAt": "2020-10-02T16:40:00Z",
+            "content": "Il governo spinge sulla diffusione della app Immuni: tra gli strumenti messi in campo per far fronte all'aumento dei contagi c'è la campagna per promuovere l'uso dell'applicazione per il tracciamento… [+2466 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Leggo.it"
+            },
+            "author": "Redazione Web",
+            "title": "Coronavirus nel Lazio, 5 morti e 264 nuovi positivi di cui 202 a Roma e provincia - Leggo.it",
+            "description": "Coronavirus nel Lazio, il bollettino di oggi dell'assessorato alla Sanità della regione comunica che i nuovi positivi registrati nelle ultime 24 ore sono 264, di cui 115 a Roma, con 5...",
+            "url": "https://www.leggo.it/italia/roma/coronavirus_laziopositivi_morti_bollettino_oggi_2_ottobre_2020-5499359.html",
+            "urlToImage": "https://www.leggo.it/photos/MED/93/59/5499359_1708_coronavirus_bollettino_lazio_2_ottobre.jpg",
+            "publishedAt": "2020-10-02T15:13:00Z",
+            "content": "Coronavirus nel Lazio, il bollettino di oggi dell'assessorato alla Sanità della regione comunica che i nuovi positivi registrati nelle ultime 24 ore sono 264, di cui 115 a Roma, con 5 morti e 55 guar… [+1995 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Rainews.it"
+            },
+            "author": null,
+            "title": "L'addio di Checco Zalone a Mirko, il ragazzo dello spot per la raccolta fondi contro la Sma - Rai News",
+            "description": "Il video del 2016 per sostenere la raccolta fondi a favore della Sma aveva raccolto milioni di visualizzazioni",
+            "url": "http://www.rainews.it/dl/rainews/media/L-addio-di-Checco-Zalone-a-Mirko-il-giovane-malato-di-sma-con-cui-aveva-girato-un-video-e97829b0-5d41-4f4a-b4c3-301ad5cf1c21.html",
+            "urlToImage": "http://www.rainews.it/dl/img/2020/10/640x360_1601647353643.rainews_20201002155758379.jpg",
+            "publishedAt": "2020-10-02T14:35:58Z",
+            "content": "Il video del 2016 per sostenere la raccolta fondi a favore della Sma aveva raccolto milioni di visualizzazioni\r\n02 ottobre 2020\"Ciao grande Mirko. Se puoi, da lassù, continua a mandarci il tuo sorris… [+1446 chars]"
+        }
+    ]
+}

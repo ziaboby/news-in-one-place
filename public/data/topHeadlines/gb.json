@@ -1,0 +1,32 @@
+{
+    "status": "ok",
+    "totalResults": 38,
+    "articles": [
+        {
+            "source": {
+                "id": null,
+                "name": "Telegraph.co.uk"
+            },
+            "author": null,
+            "title": "Coronavirus latest news: Donald Trump experiencing 'mild symptoms' after testing positive for coronavirus - Telegraph.co.uk",
+            "description": "President Donald Trump is experiencing &quot;mild symptoms&quot; of Covid-19 after revealing that he and his wife had tested positive, White House Chief of Staff Mark Meadows has confirmed.",
+            "url": "https://www.telegraph.co.uk/global-health/science-and-disease/coronavirus-news-donald-trump-covid-positive-melania-cases-latest/",
+            "urlToImage": "https://img.youtube.com/vi/s1B1bOFHWjU/mqdefault.jpg",
+            "publishedAt": "2020-10-02T18:34:22Z",
+            "content": "Since March, Mr Trump has taken a relaxed approach to the pandemic - so it may come as no shock that this translated to his staff.\r\nThe first set face masks were delivered to the White House in Febru… [+1185 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "BBC News"
+            },
+            "author": "https://www.facebook.com/bbcnews",
+            "title": "Covid: Northumbria University confirms 770 cases among students - BBC News",
+            "description": "Northumbria University in Newcastle says 770 students have tested positive and are now isolating.",
+            "url": "https://www.bbc.com/news/uk-england-tyne-54394199",
+            "urlToImage": "https://ichef.bbci.co.uk/news/1024/branded_news/E5AF/production/_114199785_capture.jpg",
+            "publishedAt": "2020-10-02T17:02:00Z",
+            "content": "image captionHundreds of students at Northumbria University are self-isolating after testing positive for Covid-19\r\nHundreds of students at Northumbria University are self-isolating after testing pos… [+3576 chars]"
+        }
+    ]
+}

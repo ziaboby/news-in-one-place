@@ -1,0 +1,58 @@
+{
+    "status": "ok",
+    "totalResults": 38,
+    "articles": [
+        {
+            "source": {
+                "id": "cnn",
+                "name": "CNN"
+            },
+            "author": "Kate Bennett, CNN",
+            "title": "Melania Trump announces she has 'mild symptoms' of coronavirus - CNN",
+            "description": "First lady Melania Trump said Friday that she is experiencing \"mild symptoms\" but is \"looking forward to a speedy recovery\" following her Covid-19 diagnosis.",
+            "url": "https://www.cnn.com/2020/10/02/politics/melania-trump-coronavirus/index.html",
+            "urlToImage": "https://cdn.cnn.com/cnnnext/dam/assets/201002010216-02-trump-melania-0911-super-tease.jpg",
+            "publishedAt": "2020-10-02T16:04:00Z",
+            "content": "(CNN)First lady Melania Trump said Friday that she is experiencing \"mild symptoms\" but is \"looking forward to a speedy recovery\" following her Covid-19 diagnosis. \r\n\"Thank you for the love you are se… [+4542 chars]"
+        },
+        {
+            "source": {
+                "id": "the-verge",
+                "name": "The Verge"
+            },
+            "author": "Andrew Marino",
+            "title": "Vergecast: a run through the Pixel 5 event - The Verge",
+            "description": "Nilay, Dieter, Dan, and Chris discuss all the announcements from Google’s fall hardware event from this week, as well as Sonos suing Google for allegedly infringing five more wireless audio patents.",
+            "url": "https://www.theverge.com/2020/10/2/21498583/vergecast-podcast-424-google-fall-hardware-event-2020",
+            "urlToImage": "https://cdn.vox-cdn.com/thumbor/XnA6moKxFqOVa7QE-6-6oPqVjSI=/0x43:3301x1771/fit-in/1200x630/cdn.vox-cdn.com/uploads/chorus_asset/file/21924893/pixel5.png",
+            "publishedAt": "2020-10-02T14:57:39Z",
+            "content": "Also, Google gets sued by Sonos again \r\nAnother week, another fall hardware event. On Wednesday, through a 30-minute infomercial, Google officially announced its new product lineup: the Pixel 5, the … [+769 chars]"
+        },
+        {
+            "source": {
+                "id": "the-washington-post",
+                "name": "The Washington Post"
+            },
+            "author": "William Booth, Karla Adam",
+            "title": "Fearing an overwhelming ‘twindemic,’ governments urged flu shots — and triggered shortages - The Washington Post",
+            "description": "In a way, it’s a test run for a potential coronavirus vaccine.",
+            "url": "https://www.washingtonpost.com/world/europe/flu-vaccine-shortage-covid-twindemic/2020/10/02/d71dd47c-026b-11eb-b92e-029676f9ebec_story.html",
+            "urlToImage": "https://www.washingtonpost.com/wp-apps/imrs.php?src=https://arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/4WA237QDKYI6XCL5HJRADVTEH4.jpg&w=1440",
+            "publishedAt": "2020-10-02T14:57:00Z",
+            "content": "Major pharmacies have halted flu shot appointments. Doctors offices are putting people on waiting lists or telling them to call back in December. Although the government has urged calm and said more … [+7397 chars]"
+        },
+        {
+            "source": {
+                "id": "al-jazeera-english",
+                "name": "Al Jazeera English"
+            },
+            "author": "Al Jazeera",
+            "title": "Turkey slams EU threat of sanctions over East Med dispute - Al Jazeera English",
+            "description": "Turkish foreign ministry warns against threat of measures amid Eastern Mediterranean standoff with Greece and Cyprus.",
+            "url": "https://www.aljazeera.com/news/2020/10/2/turkey-eu-threat-of-sanctions-unconstructive",
+            "urlToImage": "https://www.aljazeera.com/wp-content/uploads/2020/10/000_1GF5JI.jpg?resize=1200%2C630",
+            "publishedAt": "2020-10-02T14:52:06Z",
+            "content": "Turkey has rejected the Europeans Unions threat of sanctions over its energy exploration activities in the contentious Eastern Mediterranean.\r\nEU leaders warned early on Friday they could sanction Tu… [+1611 chars]"
+        }
+    ]
+}

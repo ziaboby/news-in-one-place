@@ -2,9 +2,10 @@ import axios from 'axios';
 import { DispatchWithoutAction } from 'react';
 import { ADD_SOURCES, GET_AVAILABLE_SOURCES_FAILED } from '../constants/actions';
 import { WRONG_DATA, API_FAILED } from '../constants/errors';
-import { ENDPOINTS } from '../constants/settings';
+import { ENDPOINTS } from '../constants/endpoints';
 
-const callSkeleton = id => axios.get(ENDPOINTS.getAvailableSources.replace('%COUNTRY%', id));
+const root = window.location.href.indexOf('localhost') !== -1 ? 'localhost' : 'others',
+    callSkeleton = id => axios.get(ENDPOINTS[root].getAvailableSources.replace('%COUNTRY%', id));
 
 const MAP_COUNTRIES_BY_LANG = {
     it: ['it'],
