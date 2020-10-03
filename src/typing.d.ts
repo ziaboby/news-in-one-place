@@ -27,3 +27,9 @@ export type NewsApiArticleType = {
     publishedAt: string;
     content: string;
 };
+
+export type ArticlesReducersType = {
+    articlesIndexesBySource: { [sourceId: int[]] };
+    articles: NewsApiArticleType[];
+    error: ErrorType;
+};

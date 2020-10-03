@@ -10,7 +10,7 @@ import { SourcesContext } from '../context/SourcesContext';
 
 const NavigatorLink: React.FC<RouteComponentProps> = ({ location }) => {
     const { data, selectedSources } = useContext(SourcesContext),
-        enablePreviewLink = !!selectedSources.length;
+        enableLink = !!selectedSources.length;
     const isPreviewPage = location.pathname.indexOf('view') !== -1,
         text = <Translation property={isPreviewPage ? 'editLink' : 'previewLink'} />,
         label = isPreviewPage ? 'edit' : 'preview',
@@ -21,16 +21,13 @@ const NavigatorLink: React.FC<RouteComponentProps> = ({ location }) => {
               selectedSources.map(source => data[source]).join(PREVIEW_PATH_DELIMITER);
 
     return (
-        <Link to={link} style={enablePreviewLink ? {} : { pointerEvents: 'none' }}>
+        <Link to={link} style={enableLink ? {} : { pointerEvents: 'none' }}>
             <Tooltip title={text} aria-label={label}>
                 {isPreviewPage ? (
-                    <EditIcon
-                        color={enablePreviewLink ? 'secondary' : 'disabled'}
-                        aria-label='edit'
-                    />
+                    <EditIcon color={enableLink ? 'secondary' : 'disabled'} aria-label='edit' />
                 ) : (
                     <VisibilityIcon
-                        color={enablePreviewLink ? 'secondary' : 'disabled'}
+                        color={enableLink ? 'secondary' : 'disabled'}
                         aria-label={label}
                     />
                 )}

@@ -25,12 +25,17 @@ export const ENDPOINTS = {
                 from: `${YY}-${MM}-${DD}`,
                 sortBy: 'popularity',
                 page: '1',
+                pageSize: '100',
                 apiKey: API_KEY
             }
         }
     },
     others: {
-        getAvailableSources: 'data/topHeadlines/%COUNTRY%.json',
-        getNewsBySources: 'data/everything/articles.json'
+        getAvailableSources: {
+            base: 'data/topHeadlines/%COUNTRY%.json'
+        },
+        getNewsBySources: {
+            base: 'data/everything/articles.json'
+        }
     }
 };

@@ -6,9 +6,11 @@ import { ROOT, ENDPOINTS } from '../constants/endpoints';
 import { ActionType } from '../typing';
 
 const currentApi = ENDPOINTS[ROOT].getAvailableSources,
-    { apiKey } = currentApi.params,
     callSkeleton = (id: string) =>
-        axios.get(currentApi.base, { params: { apiKey: apiKey, country: id } });
+        axios.get(
+            currentApi.base.replace('%COUNTRY%', id),
+            currentApi.params ? { params: { ...currentApi.params, country: id } } : {}
+        );
 
 const MAP_COUNTRIES_BY_LANG = {
     it: ['it'],
