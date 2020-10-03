@@ -16,7 +16,9 @@ const NavigatorLink: React.FC<RouteComponentProps> = ({ location }) => {
         label = isPreviewPage ? 'edit' : 'preview',
         link = isPreviewPage
             ? ROUTES.edit
-            : ROUTES.preview.substring(0, ROUTES.preview.lastIndexOf('/')); // TODO add sourceids
+            : ROUTES.preview.substring(0, ROUTES.preview.lastIndexOf('/')) +
+              '/' +
+              selectedSources.join('_');
 
     return (
         <Link to={link} style={enablePreviewLink ? {} : { pointerEvents: 'none' }}>
