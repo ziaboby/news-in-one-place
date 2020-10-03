@@ -15,7 +15,8 @@ import { SourcesContext } from '../context/SourcesContext';
 import Translation from '../../utils/Translation';
 import SelectedSourcesList from '../components/SelectedSourcesList';
 import SourceLabel from '../components/SourceLabel';
-import { SELECT_SOURCE, UNSELECT_SOURCE } from '../../constants/actions';
+import { RESET_SOURCES_ERROR, SELECT_SOURCE, UNSELECT_SOURCE } from '../../constants/actions';
+import ErrorMessage from '../components/ErrorMessage';
 
 const AvailableSource: React.FC<{
     source: string;
@@ -72,10 +73,28 @@ const AvailableSources: React.FC<{
                 <Skeleton />
                 <Skeleton />
                 <Skeleton />
+                <Skeleton />
+                <Skeleton />
             </>
         )}
     </List>
 );
+
+const Error: React.FC = () => {
+    const { error, dispatch } = useContext(SourcesContext);
+
+    const resetError = useCallback(() => {
+        dispatch({ type: RESET_SOURCES_ERROR });
+    }, [dispatch]);
+
+    if (!error) return null;
+
+    return (
+        <ErrorMessage onClose={resetError}>
+            <Translation property={'error_' + error} />
+        </ErrorMessage>
+    );
+};
 
 export const EditPage: React.FC<RouteComponentProps> = () => {
     const { data, dispatch } = useContext(SourcesContext),
@@ -93,6 +112,9 @@ export const EditPage: React.FC<RouteComponentProps> = () => {
             </Grid>
             <Grid item xs={6} sm={5}>
                 <AvailableSources resultsKeys={resultsKeys} />
+            </Grid>
+            <Grid item xs={12}>
+                <Error />
             </Grid>
         </>
     );

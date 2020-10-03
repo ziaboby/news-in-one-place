@@ -1,13 +1,17 @@
 export type ActionType = {
     type: string;
     payload?: any;
+    error?: string | number | undefined;
 };
 
 export type DataType = { [sourceId: string]: string };
 
+export type ErrorType = string | number | undefined;
+
 export type SourcesReducerType = {
     data: DataType;
     selectedSources: string[];
+    error: ErrorType;
 };
 
 export type NewsApiArticleType = {

@@ -2,13 +2,16 @@ import {
     ADD_SOURCES,
     SELECT_SOURCE,
     UNSELECT_SOURCE,
-    CLEAR_SELECTED_SOURCES
+    CLEAR_SELECTED_SOURCES,
+    GET_AVAILABLE_SOURCES_FAILED,
+    RESET_SOURCES_ERROR
 } from '../constants/actions';
 import { ActionType, DataType, NewsApiArticleType, SourcesReducerType } from '../typing';
 
 export const initialState = {
     data: {},
-    selectedSources: []
+    selectedSources: [],
+    error: undefined
 };
 
 function SourcesReducer(
@@ -59,6 +62,18 @@ function SourcesReducer(
             return {
                 ...state,
                 selectedSources: initialState.selectedSources
+            };
+        }
+        case GET_AVAILABLE_SOURCES_FAILED: {
+            return {
+                ...state,
+                error: action.error
+            };
+        }
+        case RESET_SOURCES_ERROR: {
+            return {
+                ...state,
+                error: initialState.error
             };
         }
         default: {
