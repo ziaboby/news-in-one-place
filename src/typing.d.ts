@@ -1,10 +1,11 @@
 export type ActionType = {
     type: string;
-    payload: any;
+    payload?: any;
 };
 
-type DataType = { [sourceId: string]: string };
-type SourcesReducerType = {
+export type DataType = { [sourceId: string]: string };
+
+export type SourcesReducerType = {
     data: DataType;
     selectedSources: string[];
 };

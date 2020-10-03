@@ -2,7 +2,6 @@ import {
     ADD_SOURCES,
     SELECT_SOURCE,
     UNSELECT_SOURCE,
-    CLEAR_SOURCES,
     CLEAR_SELECTED_SOURCES
 } from '../constants/actions';
 import { ActionType, DataType, NewsApiArticleType, SourcesReducerType } from '../typing';
@@ -55,12 +54,6 @@ function SourcesReducer(
                 };
             }
             return state;
-        }
-        case CLEAR_SOURCES: {
-            return {
-                ...state,
-                data: initialState.data
-            };
         }
         case CLEAR_SELECTED_SOURCES: {
             return {
