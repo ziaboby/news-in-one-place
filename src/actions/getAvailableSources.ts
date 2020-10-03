@@ -2,11 +2,13 @@ import axios from 'axios';
 import { Dispatch } from 'react';
 import { ADD_SOURCES, GET_AVAILABLE_SOURCES_FAILED } from '../constants/actions';
 import { WRONG_DATA, API_FAILED } from '../constants/errors';
-import { ENDPOINTS } from '../constants/endpoints';
+import { ROOT, ENDPOINTS } from '../constants/endpoints';
 import { ActionType } from '../typing';
 
-const root = window.location.href.indexOf('localhost') !== -1 ? 'localhost' : 'others',
-    callSkeleton = id => axios.get(ENDPOINTS[root].getAvailableSources.replace('%COUNTRY%', id));
+const currentApi = ENDPOINTS[ROOT].getAvailableSources,
+    { apiKey } = currentApi.params,
+    callSkeleton = (id: string) =>
+        axios.get(currentApi.base, { params: { apiKey: apiKey, country: id } });
 
 const MAP_COUNTRIES_BY_LANG = {
     it: ['it'],
