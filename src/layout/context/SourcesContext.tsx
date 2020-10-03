@@ -1,17 +1,28 @@
-import React, { useReducer } from 'react';
+import React, { useCallback, useReducer } from 'react';
 import SourcesReducer, { initialState } from '../../reducers/sources';
-import { SourcesReducerType } from '../../typing';
+import { DataType } from '../../typing';
 
 type SourcesContextType = {
-    state: SourcesReducerType;
-    dispatch: React.DispatchWithoutAction;
+    data: DataType;
+    selectedSources: string[];
+    dispatch: React.Dispatch;
+    isSelected: (sourceId: string) => boolean;
 };
 
-export const SourcesContext = React.createContext<SourcesContextType | null>(initialState);
+export const SourcesContext = React.createContext<SourcesContextType>({
+    ...initialState,
+    dispatch: () => false,
+    isSelected: () => false
+});
 
 export const SourcesContextProvider: React.FC = ({ children }) => {
-    const [state, dispatch] = useReducer(SourcesReducer, initialState);
+    const [{ data, selectedSources }, dispatch] = useReducer(SourcesReducer, initialState);
+    const isSelected = useCallback(sourceId => selectedSources.includes(sourceId), [
+        selectedSources
+    ]);
     return (
-        <SourcesContext.Provider value={{ state, dispatch }}>{children}</SourcesContext.Provider>
+        <SourcesContext.Provider value={{ data, selectedSources, dispatch, isSelected }}>
+            {children}
+        </SourcesContext.Provider>
     );
 };

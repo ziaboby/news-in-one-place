@@ -27,6 +27,10 @@ export const TRANSLATIONS: { [key: string]: { [key: string]: string } } = {
         it: 'Seleziona',
         en: 'Select'
     },
+    deselect: {
+        it: 'Deseleziona',
+        en: 'Deselect'
+    },
     selectAll: {
         it: 'Seleziona tutti',
         en: 'Select all'
@@ -38,14 +42,6 @@ export const TRANSLATIONS: { [key: string]: { [key: string]: string } } = {
     remove: {
         it: 'Rimuovi',
         en: 'Remove'
-    },
-    order: {
-        it: 'Ordina la lista',
-        en: 'Order the list'
-    },
-    orderByDragging: {
-        it: "Trascina e muovi l'elemento per riordinare la lista",
-        en: 'Drag and move the item to re-order the list'
     },
     changeLanguageForMoreSources: {
         it: 'Cambia lingua per caricare fonti in lingua inglese',

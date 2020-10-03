@@ -9,8 +9,8 @@ import Translation from '../../utils/Translation';
 import { SourcesContext } from '../context/SourcesContext';
 
 const NavigatorLink: React.FC<RouteComponentProps> = ({ location }) => {
-    const { state } = useContext(SourcesContext),
-        enablePreviewLink = !!state.selectedSources.length;
+    const { selectedSources } = useContext(SourcesContext),
+        enablePreviewLink = !!selectedSources.length;
     const isPreviewPage = location.pathname.indexOf('view') !== -1,
         text = <Translation property={isPreviewPage ? 'editLink' : 'previewLink'} />,
         label = isPreviewPage ? 'edit' : 'preview',
