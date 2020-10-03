@@ -21,10 +21,9 @@ const Header: React.FC = () => (
                 alignItems='center'
                 justifyContent='flex-start'
             >
-                <Link to={ROUTES.index}>
-                    <Typography variant='h6' color='textSecondary'>
+                <Link to={ROUTES.index} style={{ textDecoration: 'none' }}>
+                    <Typography variant='h6' style={{ color: '#fff' }}>
                         <Translation property={'logoLabel'} />
-                        {/* <Link href={ROUTES.index}></Link> */}
                     </Typography>
                 </Link>
 
