@@ -10,3 +10,5 @@ export const ROUTES = {
     edit: '/edit',
     preview: '/view/:sourcesIds'
 };
+
+export const PREVIEW_PATH_DELIMITER = '_';

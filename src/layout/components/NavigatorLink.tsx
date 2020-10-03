@@ -4,12 +4,12 @@ import { withRouter, RouteComponentProps } from 'react-router';
 import VisibilityIcon from '@material-ui/icons/Visibility';
 import EditIcon from '@material-ui/icons/Edit';
 import Tooltip from '@material-ui/core/Tooltip';
-import { ROUTES } from '../../constants/settings';
+import { ROUTES, PREVIEW_PATH_DELIMITER } from '../../constants/settings';
 import Translation from '../../utils/Translation';
 import { SourcesContext } from '../context/SourcesContext';
 
 const NavigatorLink: React.FC<RouteComponentProps> = ({ location }) => {
-    const { selectedSources } = useContext(SourcesContext),
+    const { data, selectedSources } = useContext(SourcesContext),
         enablePreviewLink = !!selectedSources.length;
     const isPreviewPage = location.pathname.indexOf('view') !== -1,
         text = <Translation property={isPreviewPage ? 'editLink' : 'previewLink'} />,
@@ -18,13 +18,16 @@ const NavigatorLink: React.FC<RouteComponentProps> = ({ location }) => {
             ? ROUTES.edit
             : ROUTES.preview.substring(0, ROUTES.preview.lastIndexOf('/')) +
               '/' +
-              selectedSources.join('_');
+              selectedSources.map(source => data[source]).join(PREVIEW_PATH_DELIMITER);
 
     return (
         <Link to={link} style={enablePreviewLink ? {} : { pointerEvents: 'none' }}>
             <Tooltip title={text} aria-label={label}>
                 {isPreviewPage ? (
-                    <EditIcon color='secondary' aria-label='edit' />
+                    <EditIcon
+                        color={enablePreviewLink ? 'secondary' : 'disabled'}
+                        aria-label='edit'
+                    />
                 ) : (
                     <VisibilityIcon
                         color={enablePreviewLink ? 'secondary' : 'disabled'}
