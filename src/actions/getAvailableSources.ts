@@ -1,8 +1,9 @@
 import axios from 'axios';
-import { DispatchWithoutAction } from 'react';
+import { Dispatch } from 'react';
 import { ADD_SOURCES, GET_AVAILABLE_SOURCES_FAILED } from '../constants/actions';
 import { WRONG_DATA, API_FAILED } from '../constants/errors';
 import { ENDPOINTS } from '../constants/endpoints';
+import { ActionType } from '../typing';
 
 const root = window.location.href.indexOf('localhost') !== -1 ? 'localhost' : 'others',
     callSkeleton = id => axios.get(ENDPOINTS[root].getAvailableSources.replace('%COUNTRY%', id));
@@ -12,7 +13,7 @@ const MAP_COUNTRIES_BY_LANG = {
     en: ['gb', 'us']
 };
 
-export default (selectedLang: string, dispatch: DispatchWithoutAction): void => {
+export default (selectedLang: string, dispatch: Dispatch<ActionType>): void => {
     Promise.all(MAP_COUNTRIES_BY_LANG[selectedLang].map(country => callSkeleton(country)))
         .then(results => {
             try {

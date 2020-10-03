@@ -1,11 +1,11 @@
 import React, { useCallback, useReducer } from 'react';
 import SourcesReducer, { initialState } from '../../reducers/sources';
-import { DataType } from '../../typing';
+import { ActionType, DataType } from '../../typing';
 
 type SourcesContextType = {
     data: DataType;
     selectedSources: string[];
-    dispatch: React.Dispatch;
+    dispatch: React.Dispatch<ActionType>;
     isSelected: (sourceId: string) => boolean;
 };
 
