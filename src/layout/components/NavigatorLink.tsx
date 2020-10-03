@@ -1,4 +1,4 @@
-import React, { useReducer } from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { withRouter, RouteComponentProps } from 'react-router';
 import VisibilityIcon from '@material-ui/icons/Visibility';
@@ -6,10 +6,10 @@ import EditIcon from '@material-ui/icons/Edit';
 import Tooltip from '@material-ui/core/Tooltip';
 import { ROUTES } from '../../constants/settings';
 import Translation from '../../utils/Translation';
-import SourcesReducer, { initialState } from '../../reducers/sources';
+import { SourcesContext } from '../context/SourcesContext';
 
 const NavigatorLink: React.FC<RouteComponentProps> = ({ location }) => {
-    const [state] = useReducer(SourcesReducer, initialState),
+    const { state } = useContext(SourcesContext),
         enablePreviewLink = !!state.selectedSources.length;
     const isPreviewPage = location.pathname.indexOf('view') !== -1,
         text = <Translation property={isPreviewPage ? 'editLink' : 'previewLink'} />,
