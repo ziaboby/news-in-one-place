@@ -17,8 +17,8 @@ npm i
 Then run one of the following script
 
 Available scripts:
-* *build:dev:watch* - launch local server and build development script in watch mode
-* *build:dev:watch:no:serve* - build development script, while watching for new updates 
-* *build:prod:watch* - build production script, while watching for new updates 
-* *build:prod* - build production script
-* *build:dev:watch* - launch local server (Thank you Webpack Dev Server team)
+* `build:dev:watch` - launch local server and build development script in watch mode
+* `build:dev:watch:no:serve` - build development script, while watching for new updates 
+* `build:prod:watch` - build production script, while watching for new updates 
+* `build:prod` - build production script
+* `build:dev:watch` - launch local server (Thank you Webpack Dev Server team)
