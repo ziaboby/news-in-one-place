@@ -7,6 +7,7 @@ import {
     RESET_SOURCES_ERROR
 } from '../constants/actions';
 import { ActionType, DataType, NewsApiArticleType, SourcesReducerType } from '../typing';
+import getSourceDomainFromUrl from '../utils/getSourceDomainFromUrl';
 
 export const initialState = {
     data: {},
@@ -27,7 +28,7 @@ function SourcesReducer(
                     !state.data[name] &&
                     !sources[name] /* && article.url.indexOf('amp') === -1 */
                 ) {
-                    sources[name] = (article.url.match(/\/\/(www.|)([\w.]+)\//) || [])[2];
+                    sources[name] = getSourceDomainFromUrl(article.url);
                 }
             });
             return {

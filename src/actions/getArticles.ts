@@ -9,6 +9,7 @@ import {
 } from '../constants/actions';
 import { WRONG_DATA, API_FAILED } from '../constants/errors';
 import { ActionType, NewsApiArticleType } from '../typing';
+import getSourceDomainFromUrl from '../utils/getSourceDomainFromUrl';
 
 export default (
     sources: string,
@@ -22,10 +23,15 @@ export default (
         .get(currentApi.base, { params })
         .then(function (response) {
             if (response.data?.articles.length) {
-                dispatch({ type: ADD_ARTICLES, payload: response.data.articles });
+                const splittedSourcesDomains = sources.split(',');
+                const filteredArticles = response.data.articles.filter((art: NewsApiArticleType) =>
+                    splittedSourcesDomains.includes(getSourceDomainFromUrl(art.url))
+                );
+                // show only the articles from the requested sources
+                dispatch({ type: ADD_ARTICLES, payload: filteredArticles });
+                // add every sources to allow more choices in case the user visit the edit page
                 dispatchForSourcesReducer({ type: ADD_SOURCES, payload: response.data.articles });
-                // const splittedSources = sources.split(',') TODO filtrare notizie in base 
-                response.data.articles.forEach((article: NewsApiArticleType) => { 
+                filteredArticles.forEach((article: NewsApiArticleType) => {
                     dispatchForSourcesReducer({
                         type: SELECT_SOURCE,
                         payload: article.source.name
