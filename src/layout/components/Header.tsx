@@ -37,6 +37,7 @@ const Header: React.FC = () => (
                 alignItems='center'
                 justifyContent='flex-end'
                 flexGrow='1'
+                paddingLeft='10px'
             >
                 <SelectorTheme />
                 <SelectorLanguage />

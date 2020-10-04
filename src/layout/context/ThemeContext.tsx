@@ -1,5 +1,5 @@
 import React, { useCallback, useState, useMemo } from 'react';
-//import { THEMES } from '../../settings';
+import { THEMES } from '../../constants/settings';
 import { createMuiTheme, ThemeProvider } from '@material-ui/core';
 
 type ThemeType = 'light' | 'dark';
@@ -8,12 +8,8 @@ type ThemeContextType = {
     toggleTheme?: () => void;
 };
 
-const THEME_TYPES: ThemeType[] = ['light', 'dark'];
-/*     THEMES = {
-        palette: {
-            type: 'light'
-        }
-    }; */
+export const THEME_TYPES: ThemeType[] = ['light', 'dark'],
+    { primary, secondary } = THEMES.palette;
 
 export const ThemeContext = React.createContext<ThemeContextType>({ themeType: THEME_TYPES[0] });
 
@@ -29,11 +25,14 @@ export const ThemeContextProvider: React.FC = ({ children }) => {
         () =>
             createMuiTheme({
                 palette: {
-                    type: themeType
+                    type: themeType,
+                    primary,
+                    secondary
                 }
             }),
         [themeType]
     );
+
     return (
         <ThemeProvider theme={theme}>
             <ThemeContext.Provider value={{ themeType, toggleTheme }}>

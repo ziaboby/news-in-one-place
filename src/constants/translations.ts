@@ -59,5 +59,9 @@ export const TRANSLATIONS: { [key: string]: { [key: string]: string } } = {
             API_FAILED +
             ' - Mi dispiace, ma non siamo riusciti a recuperare i dati richiesti',
         en: 'Error ' + API_FAILED + ' - Sorry, we are unable to retrieve the requested data'
+    },
+    changeTheme: {
+        it: 'Cambia tema',
+        en: 'Change theme'
     }
 };

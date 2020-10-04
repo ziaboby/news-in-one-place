@@ -1,5 +1,6 @@
 import React from 'react';
 import { HashRouter, Route, Switch, Redirect } from 'react-router-dom';
+import CssBaseline from '@material-ui/core/CssBaseline';
 import Grid from '@material-ui/core/Grid';
 import { LanguageContextProvider } from './context/LanguageContext';
 import { SourcesContextProvider } from './context/SourcesContext';
@@ -14,17 +15,19 @@ const App: React.FC = () => (
         <LanguageContextProvider>
             <SourcesContextProvider>
                 <ThemeContextProvider>
-                    <Grid container spacing={5}>
-                        <Grid item xs={12}>
-                            <Header />
+                    <CssBaseline>
+                        <Grid container spacing={2}>
+                            <Grid item xs={12}>
+                                <Header />
+                            </Grid>
+                            <Switch>
+                                <Route exact path={ROUTES.index} component={PageEdit} />
+                                <Route exact path={ROUTES.preview} component={PagePreview} />
+                                <Route exact path={ROUTES.edit} component={PageEdit} />
+                                <Redirect to={ROUTES.index} />
+                            </Switch>
                         </Grid>
-                        <Switch>
-                            <Route exact path={ROUTES.index} component={PageEdit} />
-                            <Route exact path={ROUTES.preview} component={PagePreview} />
-                            <Route exact path={ROUTES.edit} component={PageEdit} />
-                            <Redirect to={ROUTES.index} />
-                        </Switch>
-                    </Grid>
+                    </CssBaseline>
                 </ThemeContextProvider>
             </SourcesContextProvider>
         </LanguageContextProvider>

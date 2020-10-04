@@ -17,10 +17,12 @@ import Translation from '../../utils/Translation';
 import ErrorMessage from '../components/ErrorMessage';
 import { SourcesContext } from '../context/SourcesContext';
 
+const WIDTH = '20rem';
+
 const ArticlePlaceholder: React.FC = () => (
     <>
-        <Skeleton width='100%' style={{ height: '4rem' }} />
-        <Skeleton variant='rect' width='100%' style={{ height: '10rem' }} />
+        <Skeleton width={WIDTH} style={{ height: '4rem' }} />
+        <Skeleton variant='rect' width={WIDTH} style={{ height: '10rem' }} />
     </>
 );
 
@@ -61,19 +63,18 @@ const PreviewPage: React.FC<RouteComponentProps> = () => {
                 >
                     {(articles.length &&
                         articles.map((article: NewsApiArticleType) => (
-                            <a
+                            <Card
                                 key={article.url}
-                                href={article.url}
-                                target='_blank'
-                                rel='noreferrer'
-                                style={{ textDecoration: 'none' }}
+                                style={{
+                                    margin: '1rem',
+                                    width: WIDTH
+                                }}
                             >
-                                <Card
-                                    style={{
-                                        backgroundColor: '#ccc',
-                                        margin: '1rem',
-                                        width: '20rem'
-                                    }}
+                                <a
+                                    href={article.url}
+                                    target='_blank'
+                                    rel='noreferrer'
+                                    style={{ textDecoration: 'none' }}
                                 >
                                     {(article.urlToImage && (
                                         <CardMedia
@@ -86,6 +87,7 @@ const PreviewPage: React.FC<RouteComponentProps> = () => {
                                     <CardHeader
                                         title={article.title}
                                         subheader={article.source.name}
+                                        titleTypographyProps={{ color: 'textPrimary' }}
                                     />
                                     <CardContent>
                                         <Typography
@@ -96,8 +98,8 @@ const PreviewPage: React.FC<RouteComponentProps> = () => {
                                             {article.description}
                                         </Typography>
                                     </CardContent>
-                                </Card>
-                            </a>
+                                </a>
+                            </Card>
                         ))) || (
                         <>
                             <ArticlePlaceholder />

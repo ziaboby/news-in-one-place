@@ -65,20 +65,24 @@ const SelectedSourcesList: React.FC = () => {
 
     return (
         <>
-            <Box display='flex' justifyContent='space-between'>
-                <Tooltip
-                    title={translationComponents.selectAll}
-                    aria-label={selectAll ? 'select-all' : 'disable-select-all'}
-                >
-                    <Checkbox size='medium' checked={selectAll} onChange={cbenableSelectAll} />
-                </Tooltip>
-                <Tooltip title={translationComponents.remove} aria-label={'remove-selected'}>
-                    <DeleteForeverIcon
-                        fontSize='large'
-                        color='action'
-                        onClick={removeSelectedSources}
-                    />
-                </Tooltip>
+            <Box display='flex' justifyContent='flex-start'>
+                <Box flexGrow='1'>
+                    <Tooltip
+                        title={translationComponents.selectAll}
+                        aria-label={selectAll ? 'select-all' : 'disable-select-all'}
+                    >
+                        <Checkbox size='medium' checked={selectAll} onChange={cbenableSelectAll} />
+                    </Tooltip>
+                </Box>
+                <Box flexGrow='1'>
+                    <Tooltip title={translationComponents.remove} aria-label={'remove-selected'}>
+                        <DeleteForeverIcon
+                            fontSize='large'
+                            color='action'
+                            onClick={removeSelectedSources}
+                        />
+                    </Tooltip>
+                </Box>
             </Box>
             <List aria-label='selected sources'>
                 {selectedSources.map(source => (

@@ -25,6 +25,7 @@ const SelectorLanguage: React.FC = () => {
                     />
                 }
                 label={label.toUpperCase()}
+                style={{ width: '5rem' }}
             />
         </Tooltip>
     );
