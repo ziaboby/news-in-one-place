@@ -46,8 +46,8 @@ export const TRANSLATIONS: { [key: string]: { [key: string]: string } } = {
         en: 'Remove'
     },
     changeLanguageForMoreSources: {
-        it: 'Cambia lingua per caricare fonti in lingua inglese',
-        en: 'Change language to retrieve sources in Italian language'
+        it: 'Cambia lingua per caricare altre fonti in lingua inglese',
+        en: 'Change language to retrieve other sources in Italian language'
     },
     ['error_' + WRONG_DATA]: {
         it: 'Errore ' + WRONG_DATA + ' - Mi dispiace, ma non siamo in grado eleborare i dati',
