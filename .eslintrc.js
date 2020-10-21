@@ -1,7 +1,7 @@
 module.exports = {
     root: true,
     parser: '@typescript-eslint/parser',
-    plugins: ['react', 'import', 'react-hooks'],
+    plugins: ['react', 'react-hooks', 'import', 'prettier', '@typescript-eslint'],
     settings: {
         react: {
             version: '16.13.1'
@@ -15,6 +15,7 @@ module.exports = {
     extends: [
         'eslint:recommended',
         'plugin:react/recommended',
+        'plugin:react-hooks/recommended',
         'plugin:import/errors',
         'plugin:prettier/recommended',
         'plugin:@typescript-eslint/recommended'
@@ -34,7 +35,7 @@ module.exports = {
         'array-callback-return': [0],
         'react-hooks/rules-of-hooks': 'error',
         'react-hooks/exhaustive-deps': 'warn',
-        'prettier/prettier': 'warn'
+        'prettier/prettier': 'error'
     },
     env: {
         browser: true,
