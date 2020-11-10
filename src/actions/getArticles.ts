@@ -1,4 +1,3 @@
-import axios from 'axios';
 import { Dispatch } from 'react';
 import { ENDPOINTS, ROOT } from '../constants/endpoints';
 import {
@@ -9,6 +8,7 @@ import {
 } from '../constants/actions';
 import { WRONG_DATA, API_FAILED } from '../constants/errors';
 import { ActionType, NewsApiArticleType } from '../typing';
+import fetchApi from '../utils/fetchApi';
 import getSourceDomainFromUrl from '../utils/getSourceDomainFromUrl';
 
 export default (
@@ -19,7 +19,7 @@ export default (
     const currentApi = ENDPOINTS[ROOT].getNewsBySources,
         params = Object.assign({}, currentApi.params, { domains: sources });
 
-    axios
+    fetchApi
         .get(currentApi.base, { params })
         .then(function (response) {
             if (response.data?.articles.length) {
