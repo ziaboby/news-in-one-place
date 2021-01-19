@@ -1,13 +1,13 @@
-import axios from 'axios';
 import { Dispatch } from 'react';
 import { ADD_SOURCES, GET_AVAILABLE_SOURCES_FAILED } from '../constants/actions';
 import { WRONG_DATA, API_FAILED } from '../constants/errors';
 import { ROOT, ENDPOINTS } from '../constants/endpoints';
 import { ActionType } from '../typing';
+import fetchApi from '../utils/fetchApi';
 
 const currentApi = ENDPOINTS[ROOT].getAvailableSources,
     callSkeleton = (id: string) =>
-        axios.get(
+        fetchApi.get(
             currentApi.base.replace('%COUNTRY%', id),
             currentApi.params ? { params: { ...currentApi.params, country: id } } : {}
         );
