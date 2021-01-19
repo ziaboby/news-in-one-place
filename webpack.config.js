@@ -1,5 +1,6 @@
 const path = require('path'),
-    pkjson = require('./package.json');
+    pkjson = require('./package.json'),
+    ESLintPlugin = require('eslint-webpack-plugin');
 
 module.exports = (env, argv) => {
     const filename = 'script' + (argv.mode === 'production' ? '.' + pkjson.version + '.min' : '') + '.js';
@@ -20,13 +21,13 @@ module.exports = (env, argv) => {
                     use: [
                         {
                             loader: 'babel-loader'
-                        },
-                        'eslint-loader'
+                        }
                     ]
                 }
             ]
         },
         stats: {
+            // all: true,
             all: false,
             builtAt: true,
             cached: true,
@@ -35,11 +36,12 @@ module.exports = (env, argv) => {
             logging: 'warn',
             moduleTrace: true,
             outputPath: true,
-            //warnings: true
+            //warnings: true       
         },
         devServer: {
             contentBase: path.join(__dirname, 'public'),
             historyApiFallback: true
-        }
+        },
+        plugins: [new ESLintPlugin({ context: './src', extensions: ['.js', '.jsx', '.ts', '.tsx'] })]
     };
 };
